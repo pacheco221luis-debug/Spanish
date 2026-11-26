@@ -62,7 +62,7 @@ function onTurnstileExpired() { window.turnstileToken = ""; }
 
     if (!v("name").value.trim()) add(bad("name", "Please tell us your name.", v("name")));
     var phRaw = v("phone").value.trim(), ph = phRaw.replace(/\D/g, "");
-    if (!/^\+?[\d\s().-]{7,40}$/.test(phRaw) || ph.length < 7 || ph.length > 15) {
+    if (phRaw && (!/^\+?[\d\s().-]{7,40}$/.test(phRaw) || ph.length < 7 || ph.length > 15)) { // phone is optional
       add(bad("phone", "Please enter a valid phone number including country code.", v("phone")));
     }
     var em = v("email").value.trim();

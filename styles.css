@@ -681,3 +681,12 @@ footer nav a { font-family: 'DM Sans', sans-serif; }
 .nf-card p.nf-small { font-size: 15px; margin-bottom: 24px; opacity: .75; }
 .legal-sec ul + p { margin-top: 14px; }
 .review-card-item .who { margin-bottom: 12px; }
+
+/* Header: five menu links fit comfortably between 981px and 1120px */
+.bar { gap: 20px; }
+@media (min-width: 981px) and (max-width: 1120px) {
+  .nav-right { gap: 14px; }
+  #menu ul { gap: 13px; }
+  #menu a { font-size: 14px; }
+  .hc { padding: 10px 16px; font-size: 14px; }
+}
