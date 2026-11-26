@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin Dashboard · Spanish with Lisa</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F1E7;
+    --pure: #FFFFFF;
+    --green: #354B35;
+    --terra: #D96B3B;
+    --btnh: #C25A2C;
+    --sage: #DCE5CE;
+    --ink: #30352F;
+    --line: rgba(48,53,47,.16);
+    --field: #FBF8F2;
+    --err: #B3261E;
+    --success: #2E7D32;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 Inter, system-ui, sans-serif; display: flex; min-height: 100vh; }
+  h1, h2, h3, h4 { font-family: Poppins, system-ui, sans-serif; color: var(--green); margin: 0; }
+  a { text-decoration: none; color: inherit; }
+
+  /* Sidebar */
+  aside {
+    width: 260px;
+    background: var(--green);
+    color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    z-index: 10;
+  }
+  .admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font: 600 18px Poppins, sans-serif;
+    color: var(--bg);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(245,241,231,0.15);
+  }
+  .admin-logo small { display: block; font-size: 12px; opacity: 0.8; font-weight: 400; }
+  
+  .web-link-box {
+    padding: 0 4px 16px 4px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(245,241,231,0.15);
+  }
+  .web-link-box a {
+    font-size: 13px;
+    color: var(--sage);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .web-link-box a:hover { color: var(--bg); }
+
+  .side-nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .side-nav a {
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: var(--bg);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .side-nav a:hover, .side-nav a.active {
+    background: rgba(245,241,231,0.12);
+    color: var(--pure);
+  }
+  .side-footer {
+    padding-top: 16px;
+    border-top: 1px solid rgba(245,241,231,0.15);
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  /* Main Layout */
+  main {
+    margin-left: 260px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  /* Topbar */
+  header {
+    background: var(--pure);
+    border-bottom: 1px solid var(--line);
+    height: 72px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  .search-bar input {
+    width: 320px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
+    background: var(--field);
+    padding: 0 16px;
+    font: inherit;
+    font-size: 14px;
+  }
+  .admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: var(--green);
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-family: Poppins, sans-serif;
+  }
+
+  /* Dashboard Content */
+  .content { padding: 32px; display: flex; flex-direction: column; gap: 28px; }
+  
+  /* KPIs Grid */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .kpi-card {
+    background: var(--pure);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(48,53,47,0.03);
+  }
+  .kpi-card span { font-size: 13px; opacity: 0.7; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+  .kpi-card h3 { font-size: 28px; margin-top: 6px; color: var(--green); }
+
+  /* Data Table Section */
+  .card-section {
+    background: var(--pure);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 6px 20px rgba(48,53,47,0.04);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .card-header h2 { font-size: 20px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    font-weight: 600;
+    color: var(--green);
+    background: var(--field);
+  }
+  tr:hover td { background: rgba(245,241,231,0.4); }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .badge.pending { background: #FFF3E0; color: #E65100; }
+  .badge.contacted { background: #E3F2FD; color: #1565C0; }
+  .badge.confirmed { background: #E8F5E9; color: var(--success); }
+  .badge.active { background: #E0F2F1; color: #00695C; }
+  .badge.published { background: #E8F5E9; color: var(--success); }
+
+  .btn-action {
+    background: var(--terra);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font: 500 13px Poppins, sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-action:hover { background: var(--btnh); }
+
+  .btn-secondary {
+    background: var(--field);
+    color: var(--green);
+    border: 1.5px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font: 500 13px Poppins, sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: var(--sage); }
+
+  .btn-danger {
+    background: #FFEBEE;
+    color: var(--err);
+    border: 1px solid rgba(179,38,30,0.2);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font: 500 13px Poppins, sans-serif;
+    cursor: pointer;
+  }
+  .btn-danger:hover { background: #FFCDD2; }
+
+  /* Gallery Grid for Admin Locations */
+  .locations-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .loc-card-admin {
+    background: var(--field);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .loc-card-admin .img-placeholder {
+    width: 100%;
+    height: 120px;
+    background: var(--sage);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .loc-card-admin h4 { font-size: 16px; margin-bottom: 4px; }
+  .loc-card-admin p { font-size: 13px; opacity: 0.75; margin-bottom: 12px; }
+  .loc-actions { display: flex; gap: 8px; justify-content: space-between; }
+
+  @media(max-width: 900px) {
+    aside { display: none; }
+    main { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Menú Lateral (Sidebar) -->
+  <aside>
+    <a href="admin.html" class="admin-logo">
+      <span>🌿 Spanish w/ Lisa</span>
+      <small>Admin Dashboard</small>
+    </a>
+    
+    <div class="web-link-box">
+      <a href="index.html" target="_blank">
+        🌐 Ver página web pública ↗
+      </a>
+    </div>
+
+    <nav class="side-nav">
+      <a href="admin.html" class="active">📊 Dashboard</a>
+      <a href="#inquiries">📥 Inquiries (Leads)</a>
+      <a href="#active-students">🎓 Active Students</a>
+      <a href="#locations">📍 Locations & Photos</a>
+      <a href="#">📅 Lessons Schedule</a>
+      <a href="#">⚙️ Settings</a>
+    </nav>
+    <div class="side-footer">
+      <span>Logged in as Lisa</span><br>
+      <a href="index.html" style="color:var(--terra); font-weight:500;">Log Out</a>
+    </div>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <main>
+    <header>
+      <div class="search-bar">
+        <input type="text" placeholder="Search student or location...">
+      </div>
+      <div class="admin-profile">
+        <div style="text-align: right;">
+          <b style="display:block; font-size:14px; color:var(--green);">Lisa M.</b>
+          <span style="font-size:12px; opacity:0.7;">Tutor & Founder</span>
+        </div>
+        <div class="avatar">L</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- Tarjetas KPI -->
+      <div class="kpis">
+        <div class="kpi-card">
+          <span>New Inquiries (Today)</span>
+          <h3>3</h3>
+        </div>
+        <div class="kpi-card">
+          <span>Pending Contact</span>
+          <h3>5</h3>
+        </div>
+        <div class="kpi-card">
+          <span>Lessons (Last 30 Days)</span>
+          <h3>18</h3>
+        </div>
+        <div class="kpi-card">
+          <span>Active Locations</span>
+          <h3>6</h3>
+        </div>
+      </div>
+
+      <!-- Tabla 1: Solicitudes Recientes (Formulario Web) -->
+      <section class="card-section" id="inquiries">
+        <div class="card-header">
+          <h2>Recent Student Inquiries</h2>
+          <span style="font-size: 13px; opacity: 0.7;">New leads from website form</span>
+        </div>
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Level</th>
+                <th>Interests</th>
+                <th>Preferred Time</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Sarah M.</b><br><small style="opacity:0.7;">+1 555-0192 · USA</small></td>
+                <td>Beginner</td>
+                <td>Everyday Conversations</td>
+                <td>Morning (8 am – 12 pm)</td>
+                <td><span class="badge pending">Pending</span></td>
+                <td><button class="btn-action" onclick="scheduleNextLesson('Sarah M.', '+15550192')">Contact WA</button></td>
+              </tr>
+              <tr>
+                <td><b>Markus K.</b><br><small style="opacity:0.7;">+49 151-2345 · Germany</small></td>
+                <td>Intermediate</td>
+                <td>Salvadoran Culture</td>
+                <td>Afternoon (12 pm – 5 pm)</td>
+                <td><span class="badge contacted">Contacted</span></td>
+                <td><button class="btn-action" onclick="scheduleNextLesson('Markus K.', '+491512345')">Contact WA</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Tabla 2: Estudiantes Activos & Historial (Últimos 30 días) -->
+      <section class="card-section" id="active-students">
+        <div class="card-header">
+          <div>
+            <h2>Students History & Scheduling (Last 30 Days)</h2>
+            <p style="font-size:13px; opacity:0.7; margin-top:4px;">Manage class scheduling for active students or send renewal proposals to completed ones.</p>
+          </div>
+          <button class="btn-secondary" onclick="logNewLesson()">+ Log New Lesson</button>
+        </div>
+        <div style="overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Last Lesson Date</th>
+                <th>Location</th>
+                <th>Package Status</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Estudiante Activo -->
+              <tr>
+                <td><b>David L.</b><br><small style="opacity:0.7;">david.l@example.com · +1 416-555-0189</small></td>
+                <td><b>Nov 5, 2026</b><br><small style="opacity:0.7;">3 days ago</small></td>
+                <td>Café San Benito</td>
+                <td>Lesson 3 of 5</td>
+                <td><span class="badge active">Active</span></td>
+                <td>
+                  <div style="display:flex; gap:6px;">
+                    <button class="btn-secondary" onclick="scheduleNextLesson('David L.', '+14165550189')">📅 Schedule Next</button>
+                    <button class="btn-secondary" onclick="offerRenewalEmail('david.l@example.com', 'David')">✉️ Email</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Estudiante para Renovación -->
+              <tr>
+                <td><b>Jonas P.</b><br><small style="opacity:0.7;">jonas.p@example.com · +46 70 123 4567</small></td>
+                <td><b>Oct 28, 2026</b><br><small style="opacity:0.7;">11 days ago</small></td>
+                <td>Botanical Garden</td>
+                <td>Lesson 5 of 5 (Completed)</td>
+                <td><span class="badge pending">Renewal Due</span></td>
+                <td>
+                  <div style="display:flex; gap:6px;">
+                    <button class="btn-action" onclick="offerRenewalWA('+46701234567', 'Jonas')">📲 Renew (WA)</button>
+                    <button class="btn-secondary" onclick="offerRenewalEmail('jonas.p@example.com', 'Jonas')">✉️ Email</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Sección 3: Administrar Fotos y Locaciones -->
+      <section class="card-section" id="locations">
+        <div class="card-header">
+          <div>
+            <h2>Locations & Photos Management</h2>
+            <p style="font-size:13px; opacity:0.7; margin-top:4px;">Manage the spots shown in the website location modal for student reviews.</p>
+          </div>
+          <button class="btn-action" onclick="alert('Abrir selector de imágenes para subir nueva locación')">+ Add New Location</button>
+        </div>
+
+        <div class="locations-admin-grid">
+          <div class="loc-card-admin">
+            <div class="img-placeholder">Café San Benito</div>
+            <h4>Café San Benito</h4>
+            <p>San Salvador · <span class="badge published">Public</span></p>
+            <div class="loc-actions">
+              <button class="btn-secondary" onclick="alert('Editar foto o nombre de Café San Benito')">Edit</button>
+              <button class="btn-danger" onclick="confirm('¿Eliminar esta locación?')">Delete</button>
+            </div>
+          </div>
+
+          <div class="loc-card-admin">
+            <div class="img-placeholder">Beachside El Tunco</div>
+            <h4>Beachside El Tunco</h4>
+            <p>La Libertad · <span class="badge published">Public</span></p>
+            <div class="loc-actions">
+              <button class="btn-secondary" onclick="alert('Editar foto o nombre de El Tunco')">Edit</button>
+              <button class="btn-danger" onclick="confirm('¿Eliminar esta locación?')">Delete</button>
+            </div>
+          </div>
+
+          <div class="loc-card-admin">
+            <div class="img-placeholder">Historic Suchitoto</div>
+            <h4>Historic Suchitoto</h4>
+            <p>Cuscatlán · <span class="badge published">Public</span></p>
+            <div class="loc-actions">
+              <button class="btn-secondary" onclick="alert('Editar foto o nombre de Suchitoto')">Edit</button>
+              <button class="btn-danger" onclick="confirm('¿Eliminar esta locación?')">Delete</button>
+            </div>
+          </div>
+
+          <div class="loc-card-admin">
+            <div class="img-placeholder">Botanical Garden</div>
+            <h4>Botanical Garden</h4>
+            <p>Antiguo Cuscatlán · <span class="badge published">Public</span></p>
+            <div class="loc-actions">
+              <button class="btn-secondary" onclick="alert('Editar foto o nombre del Jardín Botánico')">Edit</button>
+              <button class="btn-danger" onclick="confirm('¿Eliminar esta locación?')">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Funciones dinámicas para WhatsApp, Email y Asistencia
+    function offerRenewalWA(phone, name) {
+      var cleanPhone = phone.replace(/\D/g, '');
+      var text = "¡Hola " + name + "! 👋 Espero que estés muy bien. Te escribo de Spanish with Lisa para felicitarte por completar tu paquete de clases y saber si te gustaría renovar para seguir practicando. ¡Cuéntame qué días te quedan mejor esta semana!";
+      window.open("https://wa.me/" + cleanPhone + "?text=" + encodeURIComponent(text), "_blank");
+    }
+
+    function offerRenewalEmail(email, name) {
+      var subject = "¡Sigamos practicando tu español! - Spanish with Lisa";
+      var body = "Hola " + name + ",\n\nEspero que estés teniendo una excelente semana.\n\nTe escribo para felicitarte por completar tus sesiones de español y preguntarte si te gustaría agendar un nuevo paquete de clases para mantener tu nivel de conversación fluido.\n\nQuedo atenta a tus comentarios para coordinar tus horarios preferidos.\n\n¡Un saludo!\nLisa";
+      window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    function scheduleNextLesson(name, phone) {
+      var cleanPhone = phone.replace(/\D/g, '');
+      var text = "¡Hola " + name + "! 👋 ¿Cómo estás? Te escribo para coordinar la fecha y hora de nuestra próxima clase de español. ¿Te queda bien la misma hora o prefieres cambiar de locación esta semana?";
+      window.open("https://wa.me/" + cleanPhone + "?text=" + encodeURIComponent(text), "_blank");
+    }
+
+    function logNewLesson() {
+      alert("Función para registrar una nueva lección asistida y descontar del paquete del alumno.");
+    }
+  </script>
+</body>
+</html>

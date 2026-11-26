@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spanish Lessons in Santa Ana, El Salvador · Spanish with Lisa</title>
+<meta name="description" content="Personal one-on-one Spanish lessons in cafés and public spaces around Santa Ana, El Salvador, shaped around your interests and the conversations you want to have.">
+<meta name="theme-color" content="#F6F2E9">
+<link rel="canonical" href="https://spanishwithlisa.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph / Meta Social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spanish with Lisa">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://spanishwithlisa.com/">
+<meta property="og:title" content="Spanish Lessons in Santa Ana, El Salvador · Spanish with Lisa">
+<meta property="og:description" content="Personal one-on-one Spanish lessons built around real conversation in Santa Ana, El Salvador.">
+<meta property="og:image" content="https://spanishwithlisa.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two people chatting over coffee at a café table">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spanish Lessons in Santa Ana, El Salvador · Spanish with Lisa">
+<meta name="twitter:description" content="Personal one-on-one Spanish lessons built around real conversation in Santa Ana, El Salvador.">
+<meta name="twitter:image" content="https://spanishwithlisa.com/og-image.jpg">
+
+<link rel="stylesheet" href="/styles.css">
+<!-- TODO: self-host DM Sans and Fraunces (woff2), then remove the 3 Google Fonts lines below and the Google domains from the CSP in _headers -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Spanish with Lisa","url":"https://spanishwithlisa.com/","description":"Personal Spanish lessons through everyday conversation in cafés and public spaces around Santa Ana, El Salvador.","areaServed":{"@type":"City","name":"Santa Ana","containedInPlace":{"@type":"Country","name":"El Salvador"}}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="Spanish with Lisa, home">
+      <svg width="32" height="32" viewBox="0 0 44 44" aria-hidden="true"><path class="leaf-bg" d="M22 4C11.5 4 4 11.4 4 20.5c0 5 2.3 9.3 6 12.2V40l7.2-4.5c1.5.3 3.1.5 4.8.5 10.5 0 18-7.4 18-16.5S32.5 4 22 4Z"/><path class="leaf-fg" d="M13 27c0-8 5-12.5 15-13-.5 9.5-5 14-12.5 14-.8 0-1.6-.1-2.5-.3Z"/><path class="leaf-ln" d="M14 27c4-4 8-7 12-10" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      <span>Spanish <small>with</small> Lisa</span>
+    </a>
+    <nav aria-label="Main" class="nav-right">
+      <div id="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#where">Where We Learn</a></li>
+          <li><a href="#experience">Learning Experience</a></li>
+          
+          <li><a href="#form">Contact</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-p hc" href="#form"><span class="hc-long">Start Learning Spanish</span><span class="hc-short">Get started</span></a>
+    </nav>
+    <button class="burger" id="bb" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">PERSONAL SPANISH LESSONS · SANTA ANA, EL SALVADOR</p>
+      <h1>Spanish is better when you <em>live it.</em></h1>
+      <p class="l">Personal Spanish lessons in Santa Ana, El Salvador, shaped around your interests and the conversations you want to have.</p>
+      <div class="cta">
+        <a class="btn btn-orange-outline" href="#form">Tell Lisa what you’re looking for</a>
+        <a class="btn btn-o" href="#where">Where We Learn</a>
+      </div>
+      <ul class="tr">
+        <li>One-on-one tailored lessons for your pace</li>
+        <li>Dynamic, real-world conversational practice</li>
+        <li>Connect authentically with local culture</li>
+      </ul>
+    </div>
+    <div class="talk">
+      <div class="plab">Interactive preview</div>
+      <button type="button" class="say" id="b1" aria-expanded="false" aria-controls="t1"><b><span lang="es">¡Hola! ¿De dónde eres?</span></b><i class="en-t" id="t1">Hi! Where are you from?</i></button>
+      <button type="button" class="say me" id="b2" aria-expanded="false" aria-controls="t2"><b><span lang="es">Soy de Canadá. ¡Mucho gusto!</span></b><i class="en-t" id="t2">I’m from Canada. Nice to meet you!</i></button>
+      <button type="button" class="say" id="b3" aria-expanded="false" aria-controls="t3"><b><span lang="es">¡Qué chivo! Empecemos.</span></b><i class="en-t" id="t3">How cool! Let’s begin. (“Chivo” is Salvadoran slang for cool.)</i></button>
+      <p class="hint">Tap a bubble to see the English. Real conversational practice from day one.</p>
+    </div>
+  </div>
+</div>
+
+<section class="bg-white" id="experience">
+  <div class="wrap">
+    <p class="eyebrow">THE WAY WE LEARN</p>
+    <h2>Learning happens in conversation.</h2>
+    <div class="ben">
+      <div>
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H11l-5 4v-4H4z"/></svg></div>
+        <h3>Real Conversations</h3>
+        <p>Practice everyday Spanish and gain confidence speaking with local people in real situations.</p>
+      </div>
+      <div>
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 5.5c3-1 6.5-.5 9 1 2.5-1.5 6-2 9-1V19c-3-1-6.5-.5-9 1-2.5-1.5-6-2-9-1V5.5ZM12 6.5V20"/></svg></div>
+        <h3>Personalized Lessons</h3>
+        <p>Lessons designed around your current level, interests, and immediate travel or living goals.</p>
+      </div>
+      <div>
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+        <h3>Cultural Connection</h3>
+        <p>Discover useful local expressions and understand how Spanish is spoken daily in El Salvador.</p>
+      </div>
+    </div>
+    <p class="quiet-note">Interactions with other people depend on the situation, your comfort and their willingness to take part. They are never forced or guaranteed.</p>
+  </div>
+</section>
+
+<section class="pb bg-cream">
+  <div class="wrap">
+    <div class="pbh">
+      <p class="eyebrow">A LITTLE EVERYDAY SPANISH</p>
+      <h2>Words you can use out there.</h2>
+      <p>Small phrases can make everyday moments easier — ordering lunch, finding your way or meeting someone new.</p>
+    </div>
+    <ul>
+      <li>
+        <h3>Ordering Food</h3>
+        <b><span lang="es">“Me regala dos pupusas de queso, por favor.”</span></b>
+        <small>Two cheese pupusas, please. ("Me regala" is the local friendly way to order).</small>
+        <span>Order food, coffee, and drinks with confidence at local spots.</span>
+      </li>
+      <li>
+        <h3>Shopping at Markets</h3>
+        <b><span lang="es">“¿Cuánto cuesta?”</span></b>
+        <small>How much does it cost?</small>
+        <span>Ask prices and chat naturally with vendors while shopping.</span>
+      </li>
+      <li>
+        <h3>Asking for Directions</h3>
+        <b><span lang="es">“¿Dónde queda…?”</span></b>
+        <small>Where is…?</small>
+        <span>Ask for directions and understand local landmarks.</span>
+      </li>
+      <li>
+        <h3>Meeting Local People</h3>
+        <b><span lang="es">“Mucho gusto.”</span></b>
+        <small>Nice to meet you.</small>
+        <span>Break the ice and introduce yourself smoothly.</span>
+      </li>
+      <li>
+        <h3>Everyday Expressions</h3>
+        <b><span lang="es">“¡Qué chivo!”</span></b>
+        <small>How cool! (Salvadoran slang)</small>
+        <span>Understand informal expressions and when to use them.</span>
+      </li>
+      <li>
+        <h3>Getting Around</h3>
+        <b><span lang="es">“¿A qué hora sale el bus?”</span></b>
+        <small>What time does the bus leave?</small>
+        <span>Handle transport and travel details with simple phrases.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="where" class="bg-white">
+  <div class="wrap about">
+    <div class="photo">
+      <img src="/Estudiantes.webp" alt="Two people chatting over coffee at a café table, with notebooks and a phone in front of them" width="935" height="1024" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow">OUTSIDE THE CLASSROOM</p>
+      <h2>Your classroom can be a café, a park or a good conversation.</h2>
+      <p>Lessons don’t happen in a sterile classroom. We meet one-on-one in relaxed cafés and quiet public spaces around Santa Ana.</p>
+      <p class="mt-14">You put your Spanish into practice immediately: read real menus, order your drink, and listen to authentic conversations around you.</p>
+      <ul class="ap">
+        <li><span><strong>100% Focused on You:</strong> Complete attention on your goals, pace, and specific needs.</span></li>
+        <li><span><strong>A relaxed setting:</strong> Lessons take place in agreed public spaces where you can practice at your own pace.</span></li>
+        <li><span><strong>Real-World Practice:</strong> Surroundings become your practice material from day one.</span></li>
+      </ul>
+      <a class="btn btn-p mt-26" href="#form">Tell Lisa what you’re looking for</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREVIEW ONLY: sample reviews so the client can see how this section will look.
+     Before launch, replace them with real, permissioned reviews (e.g. from Google) and delete the
+     "prototype-note" paragraph. Never publish invented names. -->
+<section id="reviews" class="bg-cream">
+  <div class="wrap">
+    <h2>Student Reviews</h2>
+    <p>A preview of how student feedback may appear once genuine reviews are connected.</p>
+    <p class="prototype-note"><strong>Design preview:</strong> The examples below are placeholders, not published student testimonials or verified Google reviews.</p>
+
+    <div class="reviews-grid">
+      <article class="review-card-item">
+        <div>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="who">
+            <div class="av" aria-hidden="true">S</div>
+            <div><b>Sarah M.</b><span>USA</span></div>
+          </div>
+          <p>“The lessons were super practical. Sitting in a café and practicing ordering right away made a huge difference in my confidence.”</p>
+        </div>
+      </article>
+
+      <article class="review-card-item">
+        <div>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="who">
+            <div class="av" aria-hidden="true">M</div>
+            <div><b>Markus K.</b><span>Germany</span></div>
+          </div>
+          <p>“Lisa adapted every session to what I actually needed for my trip. Very patient and encouraging teacher!”</p>
+        </div>
+      </article>
+
+      <article class="review-card-item">
+        <div>
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="who">
+            <div class="av" aria-hidden="true">D</div>
+            <div><b>David L.</b><span>Canada</span></div>
+          </div>
+          <p>“I felt comfortable making mistakes right away. After a few sessions, I was chatting with vendors at the market without stress.”</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="wrap">
+    <h2>How It Works</h2>
+    <ol class="steps">
+      <li>
+        <span class="n">1</span>
+        <h3>Tell Lisa About Your Goals</h3>
+        <p>Fill out the quick inquiry form with your current level and what you want to achieve.</p>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <h3>Connect & Plan</h3>
+        <p>Lisa will reach out via WhatsApp or email to discuss availability, location, and lesson details (usually within 24 hours).</p>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <h3>Start Learning</h3>
+        <p>Meet for your first session at a convenient local spot and start speaking Spanish with confidence.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="bg-cream" id="form">
+  <div class="wrap fw">
+    <div class="fi">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Tell Lisa what you have in mind.</h2>
+      <p>Everyone comes to Spanish for a different reason. Share a little about your level, interests and availability, and Lisa can follow up with you.</p>
+      <p class="note">Sending this form does not book or confirm a lesson. Lisa contacts you first.</p>
+      <p class="note">Lessons are in person in Santa Ana, El Salvador and nearby areas.</p>
+    </div>
+    
+    <form class="fc" id="f" action="/api/inquiry" method="POST" novalidate>
+      <div class="hp" aria-hidden="true">
+        <label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      
+      <div class="g2">
+        <div class="f">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="e-name">
+          <div class="err" id="e-name"></div>
+        </div>
+        <div class="f">
+          <label for="phone">Phone number / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 555 123 4567" required aria-describedby="e-phone">
+          <div class="err" id="e-phone"></div>
+        </div>
+        <div class="f">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="e-email">
+          <div class="err" id="e-email"></div>
+        </div>
+      </div>
+
+      <div class="f">
+        <label for="level">Current Spanish level</label>
+        <select id="level" name="level" required aria-describedby="e-level">
+          <option value="">Select your level</option>
+          <option value="Complete Beginner">Complete Beginner</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Elementary">Elementary</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Upper Intermediate">Upper Intermediate</option>
+          <option value="Advanced">Advanced</option>
+          <option value="Not Sure Yet">Not Sure Yet</option>
+        </select>
+        <div class="err" id="e-level"></div>
+      </div>
+      
+      <fieldset aria-describedby="e-int">
+        <legend>What would you like to focus on?</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="int" value="Everyday Conversations">Everyday Conversations</label>
+          <label><input type="checkbox" name="int" value="Spanish for Traveling">Spanish for Traveling</label>
+          <label><input type="checkbox" name="int" value="Pronunciation">Pronunciation</label>
+          <label><input type="checkbox" name="int" value="Vocabulary">Vocabulary</label>
+          <label><input type="checkbox" name="int" value="Grammar">Grammar</label>
+          <label><input type="checkbox" name="int" value="Salvadoran Expressions & Culture">Salvadoran Expressions & Culture</label>
+          <label><input type="checkbox" name="int" value="Speaking Confidence">Speaking Confidence</label>
+        </div>
+        <div class="err" id="e-int"></div>
+      </fieldset>
+      
+      <fieldset aria-describedby="e-days">
+        <legend>Preferred days</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="days" value="Mon">Mon</label>
+          <label><input type="checkbox" name="days" value="Tue">Tue</label>
+          <label><input type="checkbox" name="days" value="Wed">Wed</label>
+          <label><input type="checkbox" name="days" value="Thu">Thu</label>
+          <label><input type="checkbox" name="days" value="Fri">Fri</label>
+          <label><input type="checkbox" name="days" value="Sat">Sat</label>
+          <label><input type="checkbox" name="days" value="Sun">Sun</label>
+        </div>
+        <div class="err" id="e-days"></div>
+      </fieldset>
+      
+      <div class="f">
+        <label for="time">Preferred time <span class="opt">(El Salvador Time, UTC-6)</span></label>
+        <select id="time" name="time" required aria-describedby="e-time">
+          <option value="">Select a time range</option>
+          <option value="Morning (8 am – 12 pm)">Morning (8 am – 12 pm)</option>
+          <option value="Afternoon (12 pm – 5 pm)">Afternoon (12 pm – 5 pm)</option>
+          <option value="Evening (5 pm – 8 pm)">Evening (5 pm – 8 pm)</option>
+          <option value="Flexible">Flexible</option>
+        </select>
+        <div class="err" id="e-time"></div>
+      </div>
+      
+      <div class="f">
+        <label for="msg">Comments and goals <span class="opt">(optional)</span></label>
+        <textarea id="msg" name="msg" placeholder="Your goals, plans in Santa Ana, or the situations you would like to practice"></textarea>
+      </div>
+
+      <div class="ck">
+        <input type="checkbox" id="priv" name="priv" required aria-describedby="e-priv">
+        <label for="priv">I agree to the <a href="/privacy">Privacy Policy</a> and consent to Spanish with Lisa storing and processing my information to respond to my inquiry.</label>
+      </div>
+      <div class="err" id="e-priv"></div>
+      
+      <div class="f">
+        <!-- TODO: replace data-sitekey with the real public Turnstile site key for spanishwithlisa.com -->
+        <div class="cf-turnstile" id="ts" data-sitekey="REPLACE_WITH_TURNSTILE_SITE_KEY" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired" data-language="en"></div>
+        <div class="err" id="e-ts"></div>
+        <p class="note">This security check helps keep spam out. Provided by Cloudflare Turnstile.</p>
+      </div>
+      
+      <noscript>
+        <div class="noscript-box">JavaScript is required to send the inquiry form. Please enable JavaScript and reload the page.</div>
+      </noscript>
+
+      <button class="btn btn-p sub" type="submit" id="sb">Send My Request</button>
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+    
+    <div class="fc" id="ok" role="status" tabindex="-1" hidden>
+      <h2>Thank you!</h2>
+      <p>Your request has been received. Lisa will follow up using the contact details you provided to discuss the next steps.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap ft">
+  <div class="fl">
+    <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true"><path class="fl-leaf-bg" d="M22 4C11.5 4 4 11.4 4 20.5c0 5 2.3 9.3 6 12.2V40l7.2-4.5c1.5.3 3.1.5 4.8.5 10.5 0 18-7.4 18-16.5S32.5 4 22 4Z"/><path class="fl-leaf-fg" d="M13 27c0-8 5-12.5 15-13-.5 9.5-5 14-12.5 14-.8 0-1.6-.1-2.5-.3Z"/><path class="fl-leaf-ln" d="M14 27c4-4 8-7 12-10" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+    <div><b>Spanish with Lisa</b><br><span class="fl-sub">Learn Spanish. Live the Experience.</span></div>
+  </div>
+  <nav aria-label="Footer"><a href="/">Home</a><a href="#where">Where We Learn</a><a href="#reviews">Student Reviews</a><a href="#form">Start Learning</a><a href="/privacy">Privacy Policy</a></nav>
+  <!-- TODO (license): if the café photo comes from Freepik's free plan, add the Freepik/author credit here as the license requires. -->
+  <p class="cp">© 2026 Spanish with Lisa · El Salvador</p>
+</div></footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
