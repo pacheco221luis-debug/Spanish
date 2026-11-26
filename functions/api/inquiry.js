@@ -57,7 +57,7 @@ export async function onRequestPost({ request, env }) {
     receivedAt: new Date().toISOString()
   };
   const digits = row.phone.replace(/\D/g, "");
-  if (!row.name || !PHONE.test(row.phone) || digits.length < 7 || digits.length > 15 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(row.email) || !LEVELS.includes(row.level) || !row.interests.length || !row.interests.every(x => ["Everyday Conversations", "Spanish for Traveling", "Pronunciation", "Vocabulary", "Grammar", "Salvadoran Expressions & Culture", "Speaking Confidence"].includes(x)) || !row.days.length || !row.days.every(x => DAYS.includes(x)) || !TIMES.includes(row.time) || !row.privacyConsent) {
+  if (!row.name || (row.phone && (!PHONE.test(row.phone) || digits.length < 7 || digits.length > 15)) || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(row.email) || !LEVELS.includes(row.level) || !row.interests.length || !row.interests.every(x => ["Everyday Conversations", "Spanish for Traveling", "Pronunciation", "Vocabulary", "Grammar", "Salvadoran Expressions & Culture", "Speaking Confidence"].includes(x)) || !row.days.length || !row.days.every(x => DAYS.includes(x)) || !TIMES.includes(row.time) || !row.privacyConsent) {
     return json({ error: "Please review the required fields." }, 400);
   }
 
