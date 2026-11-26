@@ -37,3 +37,7 @@
 - **inquiry.js:** verificación de Turnstile con tiempo límite y manejo de caídas (503), y comprobación opcional del dominio (`ALLOWED_HOSTNAMES`).
 - **Apps Script:** detección de duplicados (24 h) y purga de datos a los 12 meses (programable), ambas probadas con simulaciones.
 - **Documentación:** pasos para limitar envíos con Cloudflare y lista de pruebas previas a la publicación (`GOOGLE-SHEETS-SETUP.md`).
+
+## v3 — ajustes pedidos
+- **Menú superior:** nuevo enlace "Student Reviews" (también en el menú móvil) que lleva a la sección; el menú se reajustó para que quepan los cinco enlaces entre 981 y 1120 px.
+- **Teléfono opcional:** el campo ahora dice "(optional)"; se valida solo si se escribe (formato y longitud), tanto en el navegador como en el servidor. El email sigue siendo obligatorio porque es el único dato de contacto garantizado. La política de privacidad lo indica como opcional. En la hoja la columna del teléfono puede quedar vacía.
