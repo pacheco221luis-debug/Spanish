@@ -7,8 +7,8 @@
 <meta name="description" content="Personal one-on-one Spanish lessons in cafés and public spaces around Santa Ana, El Salvador, shaped around your interests and the conversations you want to have.">
 <meta name="theme-color" content="#F6F2E9">
 <link rel="canonical" href="https://spanishwithlisa.com/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- Open Graph / Meta Social -->
 <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Personal one-on-one Spanish lessons built around real conversation in Santa Ana, El Salvador.">
 <meta name="twitter:image" content="https://spanishwithlisa.com/og-image.jpg">
 
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="styles.css">
 <!-- TODO: self-host DM Sans and Fraunces (woff2), then remove the 3 Google Fonts lines below and the Google domains from the CSP in _headers -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,14 +40,14 @@
 
 <header>
   <div class="wrap bar">
-    <a class="logo" href="/" aria-label="Spanish with Lisa, home">
+    <a class="logo" href="./" aria-label="Spanish with Lisa, home">
       <svg width="32" height="32" viewBox="0 0 44 44" aria-hidden="true"><path class="leaf-bg" d="M22 4C11.5 4 4 11.4 4 20.5c0 5 2.3 9.3 6 12.2V40l7.2-4.5c1.5.3 3.1.5 4.8.5 10.5 0 18-7.4 18-16.5S32.5 4 22 4Z"/><path class="leaf-fg" d="M13 27c0-8 5-12.5 15-13-.5 9.5-5 14-12.5 14-.8 0-1.6-.1-2.5-.3Z"/><path class="leaf-ln" d="M14 27c4-4 8-7 12-10" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
       <span>Spanish <small>with</small> Lisa</span>
     </a>
     <nav aria-label="Main" class="nav-right">
       <div id="menu">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="./">Home</a></li>
           <li><a href="#where">Where We Learn</a></li>
           <li><a href="#experience">Learning Experience</a></li>
           
@@ -163,7 +163,7 @@
 <section id="where" class="bg-white">
   <div class="wrap about">
     <div class="photo">
-      <img src="/Estudiantes.webp" alt="Two people chatting over coffee at a café table, with notebooks and a phone in front of them" width="935" height="1024" loading="lazy">
+      <img src="Estudiantes.webp" alt="Two people chatting over coffee at a café table, with notebooks and a phone in front of them" width="935" height="1024" loading="lazy">
     </div>
     <div>
       <p class="eyebrow">OUTSIDE THE CLASSROOM</p>
@@ -259,7 +259,7 @@
       <p class="note">Lessons are in person in Santa Ana, El Salvador and nearby areas.</p>
     </div>
     
-    <form class="fc" id="f" action="/api/inquiry" method="POST" novalidate>
+    <form class="fc" id="f" action="api/inquiry" method="POST" novalidate>
       <div class="hp" aria-hidden="true">
         <label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       </div>
@@ -344,7 +344,7 @@
 
       <div class="ck">
         <input type="checkbox" id="priv" name="priv" required aria-describedby="e-priv">
-        <label for="priv">I agree to the <a href="/privacy">Privacy Policy</a> and consent to Spanish with Lisa storing and processing my information to respond to my inquiry.</label>
+        <label for="priv">I agree to the <a href="privacy.html">Privacy Policy</a> and consent to Spanish with Lisa storing and processing my information to respond to my inquiry.</label>
       </div>
       <div class="err" id="e-priv"></div>
       
@@ -376,11 +376,11 @@
     <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true"><path class="fl-leaf-bg" d="M22 4C11.5 4 4 11.4 4 20.5c0 5 2.3 9.3 6 12.2V40l7.2-4.5c1.5.3 3.1.5 4.8.5 10.5 0 18-7.4 18-16.5S32.5 4 22 4Z"/><path class="fl-leaf-fg" d="M13 27c0-8 5-12.5 15-13-.5 9.5-5 14-12.5 14-.8 0-1.6-.1-2.5-.3Z"/><path class="fl-leaf-ln" d="M14 27c4-4 8-7 12-10" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
     <div><b>Spanish with Lisa</b><br><span class="fl-sub">Learn Spanish. Live the Experience.</span></div>
   </div>
-  <nav aria-label="Footer"><a href="/">Home</a><a href="#where">Where We Learn</a><a href="#reviews">Student Reviews</a><a href="#form">Start Learning</a><a href="/privacy">Privacy Policy</a></nav>
+  <nav aria-label="Footer"><a href="./">Home</a><a href="#where">Where We Learn</a><a href="#reviews">Student Reviews</a><a href="#form">Start Learning</a><a href="privacy.html">Privacy Policy</a></nav>
   <!-- TODO (license): if the café photo comes from Freepik's free plan, add the Freepik/author credit here as the license requires. -->
   <p class="cp">© 2026 Spanish with Lisa · El Salvador</p>
 </div></footer>
 
-<script src="/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
